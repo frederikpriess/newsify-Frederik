@@ -1,0 +1,29 @@
+.category {
+    border-top: 1px solid #ddd;
+
+    &__header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        padding: 18px 20px;
+        border: none;
+        background: none;
+        cursor: none;
+
+        img {
+            height: 26px;
+        }
+
+        h2 {
+            flex: 1;
+            text-align: left;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        svg {
+            font-size: 22px;
+        }
+    }
+}

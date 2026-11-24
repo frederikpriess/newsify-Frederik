@@ -1,4 +1,4 @@
-import {Fihome, FiBookmark, FiStar, FiSettings} from 'react-icons/fi'
+import {FiHome, FiBookmark, FiStar, FiSettings} from 'react-icons/fi'
 
 function Navigation() {
     return (
