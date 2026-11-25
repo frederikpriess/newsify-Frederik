@@ -1,7 +1,7 @@
 import Category from "./Category";
 
 function Home() {
-    const categories = ['health', 'sport', 'travel']
+    const categories = ['health', 'sports', 'travel']
 
     return (
         <main className="home">
