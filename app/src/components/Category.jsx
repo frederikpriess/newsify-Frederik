@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
-import Article from 'Article.jsx'
+import Article from './Article.jsx'
 import logo from '../assets/logo.svg'
 
 function Category({name}) {
