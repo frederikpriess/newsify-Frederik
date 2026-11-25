@@ -1,9 +1,14 @@
 import { useState } from "react";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
+import Article from 'Article.jsx'
 import logo from '../assets/logo.svg'
 
 function Category({name}) {
     const [isOpen, setIsOpen] = useState(false)
+    const articles = [
+        {title: 'Headline', text: 'Surfing is a surface water sport in which the wave rider, referred to as a surfer...', image: 'https://placehold.co/72' },
+        {title: 'Headline', text: 'Surfing is a surface water sport in which the wave rider, referred to as a surfer...', image: 'https://placehold.co/72' }
+    ]
 
     return (
         <section className="category">
@@ -13,7 +18,13 @@ function Category({name}) {
                 {isOpen ? <FiChevronDown/> : <FiChevronRight/>}
             </button>
 
-            {isOpen && <p>Her kommer artiklerne</p>}
+            {isOpen && (
+                <div className="category__articles">
+                    {articles.map((article, index) => (
+                        <Article key={index} title={article.title} text={article.text} image={article.image} />
+                    ))}
+                </div>
+            )}
         </section>
     )
 }

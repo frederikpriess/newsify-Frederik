@@ -1,0 +1,27 @@
+.article {
+    display: flex;
+    gap: 18px;
+    padding: 16px 20px;
+    border-top: 1px solid #ddd;
+
+    img {
+        width: 72px;
+        height: 72px;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    h3  {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+
+    p {
+        font-size: 14px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;  /* vscode vil gerne have man skriver den uden webkit også, jeg tror det fordi webkit delen måske er ny? */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
