@@ -20,6 +20,16 @@ function Article({title, text, image, url}) {
         }
     }
 
+    function handleSave() {
+        const archive = JSON.parse(localStorage.getItem('archive')) || []
+        if (!archive.find((article) => article.url === url)) {
+            archive.push({title, text, image, url})
+            localStorage.setItem('archive', JSON.stringify(archive))
+        }
+
+        setIsSwiped(false)
+    }
+
     return (
         <div className="article">
             <a 
@@ -35,7 +45,7 @@ function Article({title, text, image, url}) {
                 </div>
             </a>
 
-            <button className="article__save">
+            <button className="article__save" onClick={handleSave}>
                 <FiBookmark />
             </button>
         </div>
