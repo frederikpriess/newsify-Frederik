@@ -1,0 +1,27 @@
+.settings {
+    padding-bottom: 100px;
+
+    h2,
+    &__subtitle {
+        text-align: center;
+        margin: 15px 0;
+    }
+}
+
+.category-switch {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+
+    img {
+        height: 26px;
+    }
+
+    h3 {
+        flex: 1;
+        font-size: 16px;
+        text-transform: uppercase;
+    }
+}

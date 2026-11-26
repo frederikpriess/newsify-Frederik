@@ -2,6 +2,8 @@
 @use 'components/_navigation';
 @use 'components/_category';
 @use 'components/article';
+@use 'components/switch';
+@use 'components/settings';
 
 * {
     margin: 0;
