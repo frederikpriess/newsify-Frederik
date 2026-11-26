@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { FiBookmark, FiTrash2 } from "react-icons/fi";
 
-function Article({title, text, image, url, onDelete}) {
+function Article({title, text, image, url, category, onDelete}) {
     const [isSwiped, setIsSwiped] = useState(false)
     const [startX, setStartX] = useState(0)
 
@@ -23,7 +23,7 @@ function Article({title, text, image, url, onDelete}) {
     function handleSave() {
         const archive = JSON.parse(localStorage.getItem('archive')) || []
         if (!archive.find((article) => article.url === url)) {
-            archive.push({title, text, image, url})
+            archive.push({title, text, image, url, category})
             localStorage.setItem('archive', JSON.stringify(archive))
         }
 
