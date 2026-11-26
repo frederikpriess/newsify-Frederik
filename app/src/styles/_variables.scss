@@ -1,0 +1,16 @@
+// Lyst tema (standard)
+body {
+    --background: white;
+    --text: #222;
+    --line: #ddd;
+    --input: #f2f2f2;
+    --green: #4a7a1d;
+}
+
+// Mørkt tema
+body.dark {
+    --background: #1e1e1e;
+    --text: #eee;
+    --line: #444;
+    --input: #333;
+}

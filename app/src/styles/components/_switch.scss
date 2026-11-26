@@ -20,7 +20,7 @@
     }
 
     &--on {
-        background-color: #4a7a1d;
+        background-color: var(--green);
 
         .switch__knob {
             transform: translate(26px);

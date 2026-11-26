@@ -1,6 +1,7 @@
-@use 'components/_header';
-@use 'components/_navigation';
-@use 'components/_category';
+@use 'variables';
+@use 'components/header';
+@use 'components/navigation';
+@use 'components/category';
 @use 'components/article';
 @use 'components/switch';
 @use 'components/settings';
@@ -13,4 +14,7 @@
 
 body {
     font-family: sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
