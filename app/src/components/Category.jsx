@@ -15,7 +15,11 @@ function Category({ name }) {
 
             fetch(url)
                 .then((response) => response.json())
-                .then((data) => setArticles(data.results.slice(0, 5)))
+                .then((data) => {
+                    if (data.results) {
+                        setArticles(data.results.slice(0, 5))
+                    }
+                })
         }
     }
 
@@ -33,7 +37,7 @@ function Category({ name }) {
                     key={index}
                     title={article.title}
                     text={article.abstract}
-                    image={article.multimedia ? article.multimedia[0].url : ''}
+                    image={article.multimedia && article.multimedia.length > 2 ? article.multimedia[0].url : ''}
                     url={article.url}
                     />
                 ))}
