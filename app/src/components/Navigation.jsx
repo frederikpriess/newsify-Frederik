@@ -1,24 +1,25 @@
 import {FiHome, FiBookmark, FiStar, FiSettings} from 'react-icons/fi'
+import { NavLink } from 'react-router-dom'
 
 function Navigation() {
     return (
         <nav className="navigation">
-            <a href="#" className="navigation__link">
+            <NavLink to="/" className="navigation__link">
                 <FiHome />
                 <span>Home</span>
-            </a>
-            <a href="#" className="navigation__link">
-            <FiBookmark />
-            <span>Archive</span>
-            </a>
-            <a href="#" className="navigation__link">
+            </NavLink>
+            <NavLink to="/archive" className="navigation__link">
+                <FiBookmark />
+                <span>Archive</span>
+            </NavLink>
+            <NavLink to="/popular" className="navigation__link">
                 <FiStar />
                 <span>Popular</span>
-            </a>
-            <a href="#" className="navigation__link">
+            </NavLink>
+            <NavLink to="/settings" className="navigation__link">
                 <FiSettings />
                 <span>Settings</span>
-            </a>
+            </NavLink>
         </nav>
     )
 }

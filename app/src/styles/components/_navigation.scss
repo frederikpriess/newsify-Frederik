@@ -3,6 +3,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
+    display: flex;
     justify-content: space-around;
     padding: 15px 0 25px;
     background-color: white;
@@ -19,6 +20,10 @@
 
         svg {
             font-size: 24px;
+        }
+
+        &.active {
+            color: #4a7a1d;
         }
     }
 }
