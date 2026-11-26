@@ -2,10 +2,10 @@ import Article from "./Article.jsx";
 import logo from '../assets/logo.svg'
 import { useState } from "react";
 import Category from "./Category.jsx";
+import categories from "../data/categories.js";
 
 function Archive() {
     const [archive, setArchive] = useState(JSON.parse(localStorage.getItem('archive')) || [])
-    const categories = ['health', 'sports', 'travel']
 
     function handleDelete(url) {
         const newArchive = archive((article) => article.url !== url)

@@ -1,7 +1,7 @@
 import CategorySwitch from "./CategorySwitch"
+import categories from "../data/categories"
 
 function Settings() {
-    const categories = ['health', 'sports', 'travel']
 
     function toggleTheme() {
         document.body.classList.toggle('dark')

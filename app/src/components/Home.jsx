@@ -1,7 +1,7 @@
 import Category from "./Category";
+import categories from "../data/categories";
 
 function Home() {
-    const categories = ['health', 'sports', 'travel']
     const visibleCategories = categories.filter((category) => localStorage.getItem(category) !== 'off')
 
     return (
