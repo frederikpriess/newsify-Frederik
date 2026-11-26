@@ -1,8 +1,35 @@
 .article {
-    display: flex;
-    gap: 18px;
-    padding: 16px 20px;
+    position: relative;
+    overflow: hidden;
     border-top: 1px solid var(--line);
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        gap: 18;
+        padding: 16px 20px;
+        background-color: var(--background);
+        color: inherit;
+        text-decoration: none;
+        transition: transform 0.3s ease;
+
+        &--swiped {
+            transform: translateX(-104px);
+        }
+    }
+
+    &__save {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 104px;
+        height: 100%;
+        border: none;
+        background-color: var(-green);
+        color: white;
+        font-size: 24px;
+    }
 
     img {
         width: 72px;
@@ -11,7 +38,7 @@
         object-fit: cover;
     }
 
-    h3  {
+    h3 {
         font-size: 16px;
         margin-bottom: 4px;
     }
@@ -20,7 +47,7 @@
         font-size: 14px;
         display: -webkit-box;
         -webkit-line-clamp: 2;
-        line-clamp: 2;  /* vscode vil gerne have man skriver den uden webkit også, jeg tror det fordi webkit delen måske er ny? */
+        line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
