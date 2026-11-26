@@ -1,12 +1,12 @@
-function Article ({title, text, image}) {
+function Article ({title, text, image, url}) {
     return (
-        <article className="article">
+        <a href={url} className="article">
             <img src={image} alt="" />
             <div>
                 <h3>{title}</h3>
                 <p>{text}</p>
             </div>
-        </article>
+        </a>
     )
 }
 

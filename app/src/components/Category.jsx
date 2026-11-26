@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FiChevronDown, FiChevronRight } from "react-icons/fi";
+import { FiChevronRight } from "react-icons/fi";
 import Article from './Article.jsx'
 import logo from '../assets/logo.svg'
 
@@ -24,16 +24,20 @@ function Category({ name }) {
             <button className="category__header" onClick={handleClick}>
                 <img src={logo} alt="" />
                 <h2>{name}</h2>
-                {isOpen ? <FiChevronDown /> : <FiChevronRight />}
+                <FiChevronRight className={isOpen ? 'category__arrow category__arrow--open' : 'category__arrow'} />
             </button>
 
-            {isOpen && (
-                <div className="category__articles">
-                    {articles.map((article, index) => (
-                        <Article key={index} title={article.title} text={article.abstract} image={article.multimedia ? article.multimedia[0].url : ''} />
-                    ))}
-                </div>
-            )}
+            <div className={isOpen ? 'category__articles category__articles--open' : 'category__articles'} >
+                {articles.map((article, index) => (
+                    <Article 
+                    key={index}
+                    title={article.title}
+                    text={article.abstract}
+                    image={article.multimedia ? article.multimedia[0].url : ''}
+                    url={article.url}
+                    />
+                ))}
+            </div>
         </section>
     )
 }

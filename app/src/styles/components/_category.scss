@@ -1,6 +1,7 @@
 .category {
     border-top: 1px solid #ddd;
 
+
     &__header {
         width: 100%;
         display: flex;
@@ -9,7 +10,7 @@
         padding: 18px 20px;
         border: none;
         background: none;
-        cursor: none;
+        cursor: pointer;
 
         img {
             height: 26px;
@@ -26,4 +27,25 @@
             font-size: 22px;
         }
     }
+
+    &__arrow {
+        transition: transform 0.3s ease;
+
+
+        &--open {
+            transform: rotate(90deg);
+        }
+    }
+
+    &__articles {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+
+        &--open {
+            max-height: 600px;
+        }
+    }
+
+
 }
