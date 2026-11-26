@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { FiBookmark } from "react-icons/fi";
+import { FiBookmark, FiTrash2 } from "react-icons/fi";
 
-function Article({title, text, image, url}) {
+function Article({title, text, image, url, onDelete}) {
     const [isSwiped, setIsSwiped] = useState(false)
     const [startX, setStartX] = useState(0)
 
@@ -45,9 +45,16 @@ function Article({title, text, image, url}) {
                 </div>
             </a>
 
-            <button className="article__save" onClick={handleSave}>
-                <FiBookmark />
-            </button>
+            {onDelete ? (
+                <button className="article__save article__save--delete" onClick={() => onDelete(url)}>
+                    <FiTrash2 />
+                </button>
+            ) : (
+                <button onClick={handleSave} className="article__save">
+                    <FiBookmark />
+                </button>
+            )
+        }
         </div>
     )
 }

@@ -29,6 +29,10 @@
         background-color: var(-green);
         color: white;
         font-size: 24px;
+
+        &--delete {
+            background-color: #ff5c5c;
+        }
     }
 
     img {

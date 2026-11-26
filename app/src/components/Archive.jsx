@@ -1,7 +1,14 @@
 import Article from "./Article.jsx";
+import { useState } from "react";
 
 function Archive() {
-    const archive = JSON.parse(localStorage.getItem('archive')) || []
+    const [archive, setArchive] = useState(JSON.parse(localStorage.getItem('archive')) || [])
+    
+    function handleDelete(url) {
+        const newArchive = archive((article) => article.url !== url)
+        setArchive(newArchive)
+        localStorage.setItem('archive', JSON.stringify(newArchive))
+    }
 
     return (
         <main className="archive">
@@ -14,6 +21,7 @@ function Archive() {
                     text={article.text}
                     image={article.image}
                     url={article.url}
+                    onDelete={handleDelete}
                 />
             ))}
         </main>
