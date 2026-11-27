@@ -21,7 +21,7 @@ function Article({title, text, image, url, category, onDelete}) {
     }
 
     function handleSave() {
-        const archive = JSON.parse(localStorage.getItem('archive')) || []
+        const archive = JSON.parse(localStorage.getItem('archive')) || [] /* Den laver en tom liste hvis der ikke bliver fundet en. */
         if (!archive.find((article) => article.url === url)) {
             archive.push({title, text, image, url, category})
             localStorage.setItem('archive', JSON.stringify(archive))

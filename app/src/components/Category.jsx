@@ -14,9 +14,9 @@ function Category({ name }) {
             const url = `https://api.nytimes.com/svc/topstories/v2/${name}.json?api-key=${import.meta.env.VITE_NYT_KEY}`
 
             fetch(url)
-                .then((response) => response.json())
+                .then((response) => response.json()) /* laver svaret om til javascript-objekt */
                 .then((data) => {
-                    if (data.results) {
+                    if (data.results) { /* jeg fik en console error med sports kategorien fordi den ikke kunne slice ingenting. */
                         setArticles(data.results.slice(0, 5))
                     }
                 })
