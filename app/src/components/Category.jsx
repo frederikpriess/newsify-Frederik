@@ -39,7 +39,7 @@ function Category({ name }) {
                     text={article.abstract}
                     image={article.multimedia && article.multimedia.length > 2 ? article.multimedia[0].url : ''}
                     url={article.url}
-                    Category={name}
+                    category={name}
                     />
                 ))}
             </div>

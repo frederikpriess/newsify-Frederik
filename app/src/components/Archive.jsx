@@ -1,14 +1,13 @@
 import Article from "./Article.jsx";
 import logo from '../assets/logo.svg'
 import { useState } from "react";
-import Category from "./Category.jsx";
 import categories from "../data/categories.js";
 
 function Archive() {
     const [archive, setArchive] = useState(JSON.parse(localStorage.getItem('archive')) || [])
 
     function handleDelete(url) {
-        const newArchive = archive((article) => article.url !== url)
+        const newArchive = archive.filter((article) => article.url !== url)
         setArchive(newArchive)
         localStorage.setItem('archive', JSON.stringify(newArchive))
     }
@@ -17,7 +16,7 @@ function Archive() {
         <main className="archive">
             {archive.length === 0 && <p className="archive__empty">Du har ikke gemt nogen artikler endnu</p>}
 
-            {categories.map((Category) => {
+            {categories.map((category) => {
                 const articles = archive.filter((article) => article.category === category)
 
                 if (articles.length === 0) {
